@@ -1040,6 +1040,31 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "comment": {
                     "shortText": "Scope of the OAuth client"
                   }
+                },
+                {
+                  "name": "token_endpoint_auth_method",
+                  "type": {
+                    "type": "union",
+                    "name": "OAuthClientTokenEndpointAuthMethod",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "none"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_basic"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_post"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Token endpoint authentication method (defaults to server default if not specified)"
+                  }
                 }
               ]
             }
@@ -1229,8 +1254,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -1525,8 +1564,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -1862,8 +1915,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -1999,6 +2066,31 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Array of allowed redirect URIs"
+                  }
+                },
+                {
+                  "name": "token_endpoint_auth_method",
+                  "type": {
+                    "type": "union",
+                    "name": "OAuthClientTokenEndpointAuthMethod",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "none"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_basic"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_post"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Token endpoint authentication method"
                   }
                 }
               ]
@@ -2189,8 +2281,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -2270,6 +2376,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Determines how long a user is banned for.\\n\\nThe format for the ban duration follows a strict sequence of decimal numbers with a unit suffix.\\nValid time units are \\"ns\\", \\"us\\" (or \\"µs\\"), \\"ms\\", \\"s\\", \\"m\\", \\"h\\".\\n\\nFor example, some possible durations include: '300ms', '2h45m'.\\n\\nSetting the ban duration to 'none' lifts the ban on the user."
+                  }
+                },
+                {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
                   }
                 },
                 {
@@ -5739,6 +5856,9 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
             "type": {
               "type": "intrinsic",
               "name": "string"
+            },
+            "comment": {
+              "shortText": "The user's unique identifier"
             }
           },
           {
@@ -5767,6 +5887,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Determines how long a user is banned for.\\n\\nThe format for the ban duration follows a strict sequence of decimal numbers with a unit suffix.\\nValid time units are \\"ns\\", \\"us\\" (or \\"µs\\"), \\"ms\\", \\"s\\", \\"m\\", \\"h\\".\\n\\nFor example, some possible durations include: '300ms', '2h45m'.\\n\\nSetting the ban duration to 'none' lifts the ban on the user."
+                  }
+                },
+                {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
                   }
                 },
                 {
@@ -6452,7 +6583,14 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         },
         "comment": {
-          "shortText": "Updates the user data. Changes are applied directly without confirmation flows."
+          "shortText": "Updates the user data. Changes are applied directly without confirmation flows.",
+          "examples": [
+            {
+              "id": "example-1",
+              "name": "Example 1",
+              "code": "\`\`\`typescript\\n// Server-side (Edge Function)\\nconst { data, error } = await supabase.auth.admin.updateUserById(\\n  userId,\\n  { user_metadata: { preferences: { theme: 'dark' } } }\\n)\\n\\n// Client-side (to sync the changes)\\nconst { data, error } = await supabase.auth.refreshSession()\\n// onAuthStateChange listeners will now be notified with updated user\\n\`\`\`"
+            }
+          ]
         }
       },
       "@supabase/supabase-js.GoTrueClient.constructor": {
@@ -6686,7 +6824,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   },
                   "isOptional": true,
                   "comment": {
-                    "shortText": "Provide your own locking mechanism based on the environment. By default no locking is done at this time.",
+                    "shortText": "Provide your own locking mechanism based on the environment. By default,\\n\`navigatorLock\` (Web Locks API) is used in browser environments when\\n\`persistSession\` is true. Falls back to an in-process lock for non-browser\\nenvironments (e.g. React Native).",
                     "tags": [
                       {
                         "tag": "experimental",
@@ -6703,12 +6841,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   },
                   "isOptional": true,
                   "comment": {
-                    "shortText": "The maximum time in milliseconds to wait for acquiring a cross-tab synchronization lock.\\n\\nWhen multiple browser tabs or windows use the auth client simultaneously, they coordinate\\nvia the Web Locks API to prevent race conditions during session refresh and other operations.\\nThis timeout controls how long to wait for the lock before failing.\\n\\nIf the lock cannot be acquired within this time, a \`LockAcquireTimeoutError\` is thrown.\\nYou can catch this by checking \`error.isAcquireTimeout === true\`.\\n\\n- **Positive value**: Wait up to this many milliseconds before timing out\\n- **Zero (0)**: Fail immediately if the lock is unavailable\\n- **Negative value**: Wait indefinitely (not recommended - can cause deadlocks)",
+                    "shortText": "The maximum time in milliseconds to wait for acquiring a cross-tab synchronization lock.\\n\\nWhen multiple browser tabs or windows use the auth client simultaneously, they coordinate\\nvia the Web Locks API to prevent race conditions during session refresh and other operations.\\nThis timeout controls how long to wait before attempting lock recovery.\\n\\n- **Positive value**: Wait up to this many milliseconds. If the lock is still held, attempt\\n  automatic recovery by stealing it (the previous holder is evicted, its callback continues\\n  to completion without exclusive access). This recovers from orphaned locks caused by\\n  React Strict Mode double-mount, storage API hangs, or aborted operations.\\n- **Zero (0)**: Fail immediately if the lock is unavailable; throws \`LockAcquireTimeoutError\`\\n  (check \`error.isAcquireTimeout === true\`).\\n- **Negative value**: Wait indefinitely — can cause permanent deadlocks if the lock is orphaned.",
                     "examples": [
                       {
                         "id": "example-1",
                         "name": "Example 1",
-                        "code": "\`\`\`ts\\nconst client = createClient(url, key, {\\n  auth: {\\n    lockAcquireTimeout: 10000, // 10 seconds\\n  },\\n})\\n\\ntry {\\n  await client.auth.getSession()\\n} catch (error) {\\n  if (error.isAcquireTimeout) {\\n    // Lock held by another tab/instance, or a previous operation is stuck.\\n    // Consider: closing other tabs, increasing timeout, or restarting the browser.\\n    console.error('Could not acquire lock within timeout period.')\\n  }\\n}\\n\`\`\`"
+                        "code": "\`\`\`ts\\nconst client = createClient(url, key, {\\n  auth: {\\n    lockAcquireTimeout: 5000, // 5 seconds, then steal orphaned lock\\n  },\\n})\\n\`\`\`"
                       }
                     ]
                   }
@@ -6720,6 +6858,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                     "name": "boolean"
                   },
                   "isOptional": true
+                },
+                {
+                  "name": "skipAutoInitialize",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "boolean"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "If true, skips automatic initialization in constructor. Useful for SSR\\ncontexts where initialization timing must be controlled to prevent race\\nconditions with HTTP response generation."
+                  }
                 },
                 {
                   "name": "storage",
@@ -14396,6 +14545,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "name": "UserAttributes",
               "properties": [
                 {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
+                  }
+                },
+                {
                   "name": "data",
                   "type": {
                     "type": "intrinsic",
@@ -18389,7 +18549,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                       {
                         "type": "literal",
                         "value": "fly"
-                      }
+                      },
+                      null
                     ]
                   },
                   "comment": {
@@ -18513,7 +18674,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -18641,7 +18803,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -18747,11 +18910,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                             "type": "literal",
                             "value": "kakao"
                           },
+                          null,
                           null
                         ]
                       },
                       "comment": {
-                        "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`, \`keycloak\` (deprecated)."
+                        "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`. Use the \`custom:\` prefix for custom OIDC providers (e.g. \`custom:my-oidc-provider\`)."
                       }
                     },
                     {
@@ -28069,11 +28233,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                         "type": "literal",
                         "value": "kakao"
                       },
+                      null,
                       null
                     ]
                   },
                   "comment": {
-                    "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`, \`keycloak\` (deprecated)."
+                    "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`. Use the \`custom:\` prefix for custom OIDC providers (e.g. \`custom:my-oidc-provider\`)."
                   }
                 },
                 {
@@ -29438,7 +29603,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                       {
                         "type": "literal",
                         "value": "fly"
-                      }
+                      },
+                      null
                     ]
                   },
                   "comment": {
@@ -29562,7 +29728,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -29690,7 +29857,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -34436,6 +34604,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "type": "object",
               "name": "UserAttributes",
               "properties": [
+                {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
+                  }
+                },
                 {
                   "name": "data",
                   "type": {
@@ -41032,7 +41211,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       }
-    }
+    },
+    "variables": {}
   },
   {
     "name": "@supabase/auth-js",
@@ -41982,6 +42162,31 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "comment": {
                     "shortText": "Scope of the OAuth client"
                   }
+                },
+                {
+                  "name": "token_endpoint_auth_method",
+                  "type": {
+                    "type": "union",
+                    "name": "OAuthClientTokenEndpointAuthMethod",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "none"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_basic"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_post"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Token endpoint authentication method (defaults to server default if not specified)"
+                  }
                 }
               ]
             }
@@ -42171,8 +42376,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -42467,8 +42686,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -42804,8 +43037,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -42941,6 +43188,31 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Array of allowed redirect URIs"
+                  }
+                },
+                {
+                  "name": "token_endpoint_auth_method",
+                  "type": {
+                    "type": "union",
+                    "name": "OAuthClientTokenEndpointAuthMethod",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "none"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_basic"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "client_secret_post"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Token endpoint authentication method"
                   }
                 }
               ]
@@ -43131,8 +43403,22 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                           {
                             "name": "token_endpoint_auth_method",
                             "type": {
-                              "type": "intrinsic",
-                              "name": "string"
+                              "type": "union",
+                              "name": "OAuthClientTokenEndpointAuthMethod",
+                              "subTypes": [
+                                {
+                                  "type": "literal",
+                                  "value": "none"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_basic"
+                                },
+                                {
+                                  "type": "literal",
+                                  "value": "client_secret_post"
+                                }
+                              ]
                             },
                             "comment": {
                               "shortText": "Token endpoint authentication method"
@@ -43212,6 +43498,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Determines how long a user is banned for.\\n\\nThe format for the ban duration follows a strict sequence of decimal numbers with a unit suffix.\\nValid time units are \\"ns\\", \\"us\\" (or \\"µs\\"), \\"ms\\", \\"s\\", \\"m\\", \\"h\\".\\n\\nFor example, some possible durations include: '300ms', '2h45m'.\\n\\nSetting the ban duration to 'none' lifts the ban on the user."
+                  }
+                },
+                {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
                   }
                 },
                 {
@@ -46678,6 +46975,9 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
             "type": {
               "type": "intrinsic",
               "name": "string"
+            },
+            "comment": {
+              "shortText": "The user's unique identifier"
             }
           },
           {
@@ -46706,6 +47006,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   "isOptional": true,
                   "comment": {
                     "shortText": "Determines how long a user is banned for.\\n\\nThe format for the ban duration follows a strict sequence of decimal numbers with a unit suffix.\\nValid time units are \\"ns\\", \\"us\\" (or \\"µs\\"), \\"ms\\", \\"s\\", \\"m\\", \\"h\\".\\n\\nFor example, some possible durations include: '300ms', '2h45m'.\\n\\nSetting the ban duration to 'none' lifts the ban on the user."
+                  }
+                },
+                {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
                   }
                 },
                 {
@@ -47391,7 +47702,14 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         },
         "comment": {
-          "shortText": "Updates the user data. Changes are applied directly without confirmation flows."
+          "shortText": "Updates the user data. Changes are applied directly without confirmation flows.",
+          "examples": [
+            {
+              "id": "example-1",
+              "name": "Example 1",
+              "code": "\`\`\`typescript\\n// Server-side (Edge Function)\\nconst { data, error } = await supabase.auth.admin.updateUserById(\\n  userId,\\n  { user_metadata: { preferences: { theme: 'dark' } } }\\n)\\n\\n// Client-side (to sync the changes)\\nconst { data, error } = await supabase.auth.refreshSession()\\n// onAuthStateChange listeners will now be notified with updated user\\n\`\`\`"
+            }
+          ]
         }
       },
       "@supabase/auth-js.GoTrueClient.constructor": {
@@ -47625,7 +47943,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   },
                   "isOptional": true,
                   "comment": {
-                    "shortText": "Provide your own locking mechanism based on the environment. By default no locking is done at this time.",
+                    "shortText": "Provide your own locking mechanism based on the environment. By default,\\n\`navigatorLock\` (Web Locks API) is used in browser environments when\\n\`persistSession\` is true. Falls back to an in-process lock for non-browser\\nenvironments (e.g. React Native).",
                     "tags": [
                       {
                         "tag": "experimental",
@@ -47642,12 +47960,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                   },
                   "isOptional": true,
                   "comment": {
-                    "shortText": "The maximum time in milliseconds to wait for acquiring a cross-tab synchronization lock.\\n\\nWhen multiple browser tabs or windows use the auth client simultaneously, they coordinate\\nvia the Web Locks API to prevent race conditions during session refresh and other operations.\\nThis timeout controls how long to wait for the lock before failing.\\n\\nIf the lock cannot be acquired within this time, a \`LockAcquireTimeoutError\` is thrown.\\nYou can catch this by checking \`error.isAcquireTimeout === true\`.\\n\\n- **Positive value**: Wait up to this many milliseconds before timing out\\n- **Zero (0)**: Fail immediately if the lock is unavailable\\n- **Negative value**: Wait indefinitely (not recommended - can cause deadlocks)",
+                    "shortText": "The maximum time in milliseconds to wait for acquiring a cross-tab synchronization lock.\\n\\nWhen multiple browser tabs or windows use the auth client simultaneously, they coordinate\\nvia the Web Locks API to prevent race conditions during session refresh and other operations.\\nThis timeout controls how long to wait before attempting lock recovery.\\n\\n- **Positive value**: Wait up to this many milliseconds. If the lock is still held, attempt\\n  automatic recovery by stealing it (the previous holder is evicted, its callback continues\\n  to completion without exclusive access). This recovers from orphaned locks caused by\\n  React Strict Mode double-mount, storage API hangs, or aborted operations.\\n- **Zero (0)**: Fail immediately if the lock is unavailable; throws \`LockAcquireTimeoutError\`\\n  (check \`error.isAcquireTimeout === true\`).\\n- **Negative value**: Wait indefinitely — can cause permanent deadlocks if the lock is orphaned.",
                     "examples": [
                       {
                         "id": "example-1",
                         "name": "Example 1",
-                        "code": "\`\`\`ts\\nconst client = createClient(url, key, {\\n  auth: {\\n    lockAcquireTimeout: 10000, // 10 seconds\\n  },\\n})\\n\\ntry {\\n  await client.auth.getSession()\\n} catch (error) {\\n  if (error.isAcquireTimeout) {\\n    // Lock held by another tab/instance, or a previous operation is stuck.\\n    // Consider: closing other tabs, increasing timeout, or restarting the browser.\\n    console.error('Could not acquire lock within timeout period.')\\n  }\\n}\\n\`\`\`"
+                        "code": "\`\`\`ts\\nconst client = createClient(url, key, {\\n  auth: {\\n    lockAcquireTimeout: 5000, // 5 seconds, then steal orphaned lock\\n  },\\n})\\n\`\`\`"
                       }
                     ]
                   }
@@ -47659,6 +47977,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                     "name": "boolean"
                   },
                   "isOptional": true
+                },
+                {
+                  "name": "skipAutoInitialize",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "boolean"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "If true, skips automatic initialization in constructor. Useful for SSR\\ncontexts where initialization timing must be controlled to prevent race\\nconditions with HTTP response generation."
+                  }
                 },
                 {
                   "name": "storage",
@@ -56171,7 +56500,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                       {
                         "type": "literal",
                         "value": "fly"
-                      }
+                      },
+                      null
                     ]
                   },
                   "comment": {
@@ -56295,7 +56625,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -56423,7 +56754,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -56529,11 +56861,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                             "type": "literal",
                             "value": "kakao"
                           },
+                          null,
                           null
                         ]
                       },
                       "comment": {
-                        "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`, \`keycloak\` (deprecated)."
+                        "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`. Use the \`custom:\` prefix for custom OIDC providers (e.g. \`custom:my-oidc-provider\`)."
                       }
                     },
                     {
@@ -65850,11 +66183,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                         "type": "literal",
                         "value": "kakao"
                       },
+                      null,
                       null
                     ]
                   },
                   "comment": {
-                    "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`, \`keycloak\` (deprecated)."
+                    "shortText": "Provider name or OIDC \`iss\` value identifying which provider should be used to verify the provided token. Supported names: \`google\`, \`apple\`, \`azure\`, \`facebook\`, \`kakao\`. Use the \`custom:\` prefix for custom OIDC providers (e.g. \`custom:my-oidc-provider\`)."
                   }
                 },
                 {
@@ -67219,7 +67553,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                       {
                         "type": "literal",
                         "value": "fly"
-                      }
+                      },
+                      null
                     ]
                   },
                   "comment": {
@@ -67343,7 +67678,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -67471,7 +67807,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
                                 {
                                   "type": "literal",
                                   "value": "fly"
-                                }
+                                },
+                                null
                               ]
                             }
                           },
@@ -72217,6 +72554,17 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "name": "UserAttributes",
               "properties": [
                 {
+                  "name": "current_password",
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "The user's current password\\n\\nThis is only ever present when the user is resetting\\ntheir password and GOTRUE_SECURITY_UPDATE_PASSWORD_REQUIRE_CURRENT_PASSWORD is true."
+                  }
+                },
+                {
                   "name": "data",
                   "type": {
                     "type": "intrinsic",
@@ -74313,7 +74661,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       }
-    }
+    },
+    "variables": {}
   },
   {
     "name": "@supabase/postgrest-js",
@@ -79379,7 +79728,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "If there's an error with the query, throwOnError will reject the promise by\\nthrowing the error instead of returning it as part of a successful response.\\n\\nhttps://github.com/supabase/supabase-js/issues/92"
         }
       }
-    }
+    },
+    "variables": {}
   },
   {
     "name": "@supabase/realtime-js",
@@ -82883,7 +83233,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       }
-    }
+    },
+    "variables": {}
   },
   {
     "name": "@supabase/storage-js",
@@ -83822,6 +84173,40 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "code": "\`\`\`js\\nconst { data, error } = await supabase\\n  .storage\\n  .listBuckets({\\n    limit: 10,\\n    offset: 0,\\n    sortColumn: 'created_at',\\n    sortOrder: 'desc',\\n    search: 'prod'\\n  })\\n\`\`\`"
             }
           ]
+        }
+      },
+      "@supabase/storage-js.StorageClient.setHeader": {
+        "name": "@supabase/storage-js.StorageClient.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state."
         }
       },
       "@supabase/storage-js.StorageClient.throwOnError": {
@@ -85176,6 +85561,40 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           ]
         }
       },
+      "@supabase/storage-js.packages/StorageAnalyticsClient.default.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageAnalyticsClient.default.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state."
+        }
+      },
       "@supabase/storage-js.packages/StorageAnalyticsClient.default.throwOnError": {
         "name": "@supabase/storage-js.packages/StorageAnalyticsClient.default.throwOnError",
         "params": [],
@@ -85994,6 +86413,40 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "code": "\`\`\`js\\nconst { data, error } = await supabase\\n  .storage\\n  .listBuckets({\\n    limit: 10,\\n    offset: 0,\\n    sortColumn: 'created_at',\\n    sortOrder: 'desc',\\n    search: 'prod'\\n  })\\n\`\`\`"
             }
           ]
+        }
+      },
+      "@supabase/storage-js.packages/StorageBucketApi.default.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageBucketApi.default.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state."
         }
       },
       "@supabase/storage-js.packages/StorageBucketApi.default.throwOnError": {
@@ -86865,6 +87318,66 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "name": "Options"
             },
             "isOptional": true
+          },
+          {
+            "name": "parameters",
+            "type": {
+              "type": "object",
+              "name": "FetchParameters",
+              "properties": [
+                {
+                  "name": "cache",
+                  "type": {
+                    "type": "union",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "default"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-store"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "reload"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "force-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "only-if-cached"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Controls how the request interacts with the browser's HTTP cache.\\n- 'default': Use standard cache behavior\\n- 'no-store': Bypass cache entirely (useful in Edge Functions)\\n- 'reload': Bypass cache but update it with response\\n- 'no-cache': Validate with server before using cached response\\n- 'force-cache': Use cache even if stale\\n- 'only-if-cached': Only use cache, fail if not cached"
+                  }
+                },
+                {
+                  "name": "signal",
+                  "type": {
+                    "type": "nameOnly",
+                    "name": "AbortSignal"
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Pass in an AbortController's signal to cancel the request."
+                  }
+                }
+              ]
+            },
+            "isOptional": true,
+            "comment": {
+              "shortText": "Additional fetch parameters like signal for cancellation. Supports standard fetch options including cache control."
+            }
           }
         ],
         "ret": {
@@ -86886,6 +87399,16 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "id": "download-file-with-transformations",
               "name": "Download file with transformations",
               "code": "\`\`\`js\\nconst { data, error } = await supabase\\n  .storage\\n  .from('avatars')\\n  .download('folder/avatar1.png', {\\n    transform: {\\n      width: 100,\\n      height: 100,\\n      quality: 80\\n    }\\n  })\\n\`\`\`"
+            },
+            {
+              "id": "download-with-cache-control-useful-in-edge-functions",
+              "name": "Download with cache control (useful in Edge Functions)",
+              "code": "\`\`\`js\\nconst { data, error } = await supabase\\n  .storage\\n  .from('avatars')\\n  .download('folder/avatar1.png', {}, { cache: 'no-store' })\\n\`\`\`"
+            },
+            {
+              "id": "download-with-abort-signal",
+              "name": "Download with abort signal",
+              "code": "\`\`\`js\\nconst controller = new AbortController()\\nsetTimeout(() => controller.abort(), 5000)\\n\\nconst { data, error } = await supabase\\n  .storage\\n  .from('avatars')\\n  .download('folder/avatar1.png', {}, { signal: controller.signal })\\n\`\`\`"
             }
           ]
         }
@@ -87302,6 +87825,42 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "name": "FetchParameters",
               "properties": [
                 {
+                  "name": "cache",
+                  "type": {
+                    "type": "union",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "default"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-store"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "reload"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "force-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "only-if-cached"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Controls how the request interacts with the browser's HTTP cache.\\n- 'default': Use standard cache behavior\\n- 'no-store': Bypass cache entirely (useful in Edge Functions)\\n- 'reload': Bypass cache but update it with response\\n- 'no-cache': Validate with server before using cached response\\n- 'force-cache': Use cache even if stale\\n- 'only-if-cached': Only use cache, fail if not cached"
+                  }
+                },
+                {
                   "name": "signal",
                   "type": {
                     "type": "nameOnly",
@@ -87662,6 +88221,42 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "type": "object",
               "name": "FetchParameters",
               "properties": [
+                {
+                  "name": "cache",
+                  "type": {
+                    "type": "union",
+                    "subTypes": [
+                      {
+                        "type": "literal",
+                        "value": "default"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-store"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "reload"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "no-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "force-cache"
+                      },
+                      {
+                        "type": "literal",
+                        "value": "only-if-cached"
+                      }
+                    ]
+                  },
+                  "isOptional": true,
+                  "comment": {
+                    "shortText": "Controls how the request interacts with the browser's HTTP cache.\\n- 'default': Use standard cache behavior\\n- 'no-store': Bypass cache entirely (useful in Edge Functions)\\n- 'reload': Bypass cache but update it with response\\n- 'no-cache': Validate with server before using cached response\\n- 'force-cache': Use cache even if stale\\n- 'only-if-cached': Only use cache, fail if not cached"
+                  }
+                },
                 {
                   "name": "signal",
                   "type": {
@@ -88186,6 +88781,40 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "response": "\`\`\`json\\n{\\n  \\"data\\": [],\\n  \\"error\\": null\\n}\\n\`\`\`"
             }
           ]
+        }
+      },
+      "@supabase/storage-js.packages/StorageFileApi.default.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageFileApi.default.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state."
         }
       },
       "@supabase/storage-js.packages/StorageFileApi.default.throwOnError": {
@@ -89556,6 +90185,46 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           ]
         }
       },
+      "@supabase/storage-js.packages/StorageVectorsClient.StorageVectorsClient.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageVectorsClient.StorageVectorsClient.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state.",
+          "tags": [
+            {
+              "tag": "alpha",
+              "text": ""
+            }
+          ]
+        }
+      },
       "@supabase/storage-js.packages/StorageVectorsClient.StorageVectorsClient.throwOnError": {
         "name": "@supabase/storage-js.packages/StorageVectorsClient.StorageVectorsClient.throwOnError",
         "params": [],
@@ -90235,6 +90904,46 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               "id": "example-1",
               "name": "Example 1",
               "code": "\`\`\`typescript\\nconst bucket = supabase.storage.vectors.from('embeddings-prod')\\nconst { data } = await bucket.listIndexes({ prefix: 'documents-' })\\n\`\`\`"
+            }
+          ]
+        }
+      },
+      "@supabase/storage-js.packages/StorageVectorsClient.VectorBucketScope.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageVectorsClient.VectorBucketScope.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state.",
+          "tags": [
+            {
+              "tag": "alpha",
+              "text": ""
             }
           ]
         }
@@ -91126,6 +91835,46 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           ]
         }
       },
+      "@supabase/storage-js.packages/StorageVectorsClient.VectorIndexScope.setHeader": {
+        "name": "@supabase/storage-js.packages/StorageVectorsClient.VectorIndexScope.setHeader",
+        "params": [
+          {
+            "name": "name",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header name"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "type": "intrinsic",
+              "name": "string"
+            },
+            "comment": {
+              "shortText": "Header value"
+            }
+          }
+        ],
+        "ret": {
+          "type": {
+            "type": "intrinsic",
+            "name": "this"
+          }
+        },
+        "comment": {
+          "shortText": "Set an HTTP header for the request.\\nCreates a shallow copy of headers to avoid mutating shared state.",
+          "tags": [
+            {
+              "tag": "alpha",
+              "text": ""
+            }
+          ]
+        }
+      },
       "@supabase/storage-js.packages/StorageVectorsClient.VectorIndexScope.throwOnError": {
         "name": "@supabase/storage-js.packages/StorageVectorsClient.VectorIndexScope.throwOnError",
         "params": [],
@@ -91333,7 +92082,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Attaches callbacks for the resolution and/or rejection of the Promise."
         }
       }
-    }
+    },
+    "variables": {}
   },
   {
     "name": "@supabase/functions-js",
@@ -91749,7 +92499,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       }
-    }
+    },
+    "variables": {}
   }
 ]"
 `;
